@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Shop\App\Http\Controllers\ProductController as ControllersProductController;
 use Modules\Shop\App\Http\Controllers\ShopController;
 
 /*
@@ -13,7 +14,11 @@ use Modules\Shop\App\Http\Controllers\ShopController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Modules\Shop\Http\Controllers\ProductController;
 
-Route::group([], function () {
-    Route::resource('shop', ShopController::class)->names('shop');
+Route::get('/products', [ControllersProductController::class, 'index'])->name('products.index');
+
+
+Route::prefix('shop')->group(function () {
+    Route::get('/', 'ShopController@index');
 });

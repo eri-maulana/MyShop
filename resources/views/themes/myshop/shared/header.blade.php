@@ -24,7 +24,7 @@
            </li>
            <!-- mobile menu -->
            <div class="dropdown  mt-3 d-lg-none">
-             <button class="btn btn-success dropdown-toggle dropdown-full" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+             <button class="btn btn-success dropdown-full dropdown-toggle dropdown-full" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                Menu
              </button>
              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
