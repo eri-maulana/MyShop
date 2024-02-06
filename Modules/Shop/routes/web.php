@@ -14,7 +14,7 @@ use Modules\Shop\App\Http\Controllers\ShopController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use Modules\Shop\Http\Controllers\ProductController;
+
 
 Route::get('/products', [ControllersProductController::class, 'index'])->name('products.index');
 
