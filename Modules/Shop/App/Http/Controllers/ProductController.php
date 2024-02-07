@@ -16,6 +16,7 @@ class ProductController extends Controller
     protected $categoryRepository;
     protected $tagRepository;
     protected $defaultPriceRange;
+    protected $sortingQuery;
 
 
 
@@ -35,6 +36,15 @@ class ProductController extends Controller
         $this->data['categories'] = $this->categoryRepository->findAll();
         $this->data['filter']['price'] = $this->defaultPriceRange;
 
+        $this->sortingQuery = null;
+        $this->data['sortingQuery'] = $this->sortingQuery;
+        $this->data['sortingOptions'] = [
+            '' => '-- Sort Products --',
+            '?sort=price&order=asc' => 'Price: Low to High',
+            '?sort=price&order=desc' => 'Price: High to Low',
+            '?sort=publish_date&order=desc' => 'Newest Item',
+        ];
+
     }
     /**
      * Display a listing of the resource.
@@ -52,6 +62,15 @@ class ProductController extends Controller
 
         if ($request->get('price')) {
             $this->data['filter']['price'] = $priceFilter;
+        }
+
+        if ($request->get('sort')) {
+            $sort = $this->sortingRequest($request);
+            $options['sort'] = $sort;
+
+            $this->sortingQuery = '?sort=' . $sort['sort'] . '&order=' . $sort['order'];
+
+            $this->data['sortingQuery'] = $this->sortingQuery;
         }
         
         $this->data['products'] = $this->productRepository->findAll($options);
@@ -109,5 +128,24 @@ class ProductController extends Controller
             'min' => (int) $prices[0],
             'max' => (int) $prices[1],
         ];
+    }
+
+    function sortingRequest(Request $request)
+    {
+        $sort = [];
+
+        if ($request->get('sort') && $request->get('order')) {
+            $sort = [
+                'sort' => $request->get('sort'),
+                'order' => $request->get('order'),
+            ];
+        } else if ($request->get('sort')) {
+            $sort = [
+                'sort' => $request->get('sort'),
+                'order' => 'desc',
+            ];
+        }
+
+        return $sort;
     }
 }
