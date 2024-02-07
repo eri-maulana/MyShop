@@ -18,6 +18,7 @@ use Modules\Shop\App\Http\Controllers\ShopController;
 
 Route::get('/products', [ControllersProductController::class, 'index'])->name('products.index');
 Route::get('/category/{categorySlug}', [ControllersProductController::class, 'category'])->name('products.category');
+Route::get('/tag/{tagSlug}', [ControllersProductController::class, 'tag'])->name('products.tag');
 Route::get('/{categorySlug}/{productSlug}', [ControllersProductController::class, 'show'])->name('products.show');
 
 
