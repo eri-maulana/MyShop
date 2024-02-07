@@ -24,6 +24,9 @@ Route::get('/{categorySlug}/{productSlug}', [ControllersProductController::class
 Route::middleware(['auth'])->group(function () {
     Route::get('/carts', [ControllersCartController::class, 'index'])->name('carts.index');
 });
+Route::get('/carts/{id}/remove', [ControllersCartController::class, 'destroy'])->name('carts.destroy');
+Route::post('/carts', [ControllersCartController::class, 'store'])->name('carts.store');
+Route::put('/carts', [ControllersCartController::class, 'update'])->name('carts.update');
 
 
 Route::prefix('shop')->group(function () {
