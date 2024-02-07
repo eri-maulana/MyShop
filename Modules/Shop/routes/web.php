@@ -17,6 +17,8 @@ use Modules\Shop\App\Http\Controllers\ShopController;
 
 
 Route::get('/products', [ControllersProductController::class, 'index'])->name('products.index');
+Route::get('/category/{categorySlug}', [ControllersProductController::class, 'category'])->name('products.category');
+Route::get('/{categorySlug}/{productSlug}', [ControllersProductController::class, 'show'])->name('products.show');
 
 
 Route::prefix('shop')->group(function () {

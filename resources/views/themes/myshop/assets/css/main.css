@@ -350,13 +350,13 @@ a:hover {
 
 footer {
   margin-top: 150px;
-  background-color: #463C74;
-  color: #ced4da;
+  background-color: #888;
+  color: #000;
   font-size: 14px;
 }
 footer .row-content .logo-brand {
   font-size: 30px;
-  color: #B4D51E;
+  color: #463C74;
 }
 footer .row-content .logo-brand span {
   color: #B4D51E;
@@ -366,12 +366,13 @@ footer .row-content h3 {
   color: #B4D51E;
 }
 footer .row-content a {
-  color: #ced4da;
+  color: #000;
 }
 footer .row-content a:hover {
-  color: #faf5d2;
+  color: #B4D51E;
 }
 footer .row-copy i {
   font-size: 25px;
-  color: #B4D51E;
+  color: #000;
+  
 }

@@ -2,7 +2,7 @@
    <div class="container pt-3">
       <div class="row row-content">
          <div class="col-md-6">
-            <h1 class="logo-brand">My <span>Shop</span> </h1>
+            <h1 class="logo-brand">My<span>Shop</span> </h1>
             <p>Lorem ipsum dolor sit amet.</p>
          </div>
          <div class="col-md-3 mt-4 mt-sm-0">
@@ -21,7 +21,8 @@
             <p>Sukabumi, Jawa Barat. Indonesia</p>
          </div>
       </div>
-      <div class="row row-copy mt-4 mt-sm-0">
+      <hr class="mt-3">
+      <div class="row row-copy  mt-sm-0 justify-content-center align-items-center">
          <div class="col-md-6">
             <p>&copy; 2024 MyShop.</p>
          </div>

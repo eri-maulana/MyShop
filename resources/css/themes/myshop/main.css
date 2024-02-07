@@ -48,7 +48,7 @@ body {
 }
 
 .navbar .navbar-brand {
-  color: #463C74;
+  color: #000 !important;
   font-size: 22px;
   font-weight: 700;
 }
